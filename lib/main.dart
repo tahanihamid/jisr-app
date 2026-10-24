@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'screens/splash_screen.dart';
+import 'theme/colors.dart';
 
 void main() {
   runApp(const JisrApp());
@@ -10,17 +12,13 @@ class JisrApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Jisr App',
+      title: 'Jisr',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.indigo),
-        useMaterial3: true,
+        colorScheme: ColorScheme.fromSeed(seedColor: brandColor),
+        scaffoldBackgroundColor: Colors.white,
       ),
-      home: const Scaffold(
-        body: Center(
-          child: Text('Jisr Platform'),
-        ),
-      ),
+      home: const SplashScreen(),
     );
   }
 }
