@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import '../theme/colors.dart';
 import 'peers_screen.dart';
+import 'profile_screen.dart';
+import 'advisor_screen.dart';
+import 'assessments_screen.dart';  
+import 'certificates_screen.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -22,11 +26,12 @@ class _MainScreenState extends State<MainScreen> {
 
   final List<Widget> _pages = const [
     const PeersScreen(),
-    _PlaceholderPage(title: 'AI Career Advisor'),
-    _PlaceholderPage(title: 'Skill Assessments'),
-    _PlaceholderPage(title: 'Certificates Tracker'),
-    _PlaceholderPage(title: 'Student Profile'),
+    const AdvisorScreen(),
+    const AssessmentsScreen(),
+    const CertificatesScreen(),
+    const ProfileScreen(),
   ];
+
 
   @override
   Widget build(BuildContext context) {
