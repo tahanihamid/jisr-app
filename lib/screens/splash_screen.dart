@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 import 'login_screen.dart';
 import '../theme/colors.dart';
 
-const _logoSize = 100.0;
+const _logoSize = 110.0;
 const _splashDuration = Duration(seconds: 2);
 
 class SplashScreen extends StatefulWidget {
@@ -41,29 +41,30 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: backgroundColor,
       body: SafeArea(
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               _buildLogo(),
-              const SizedBox(height: 26),
-              const Text(
+              const SizedBox(height: 24),
+              Text(
                 'JISR',
                 style: TextStyle(
-                  fontSize: 28,
+                  fontSize: 30,
                   fontWeight: FontWeight.bold,
                   letterSpacing: 4,
                   color: brandColor,
                 ),
               ),
-              const SizedBox(height: 8),
+              const SizedBox(height: 10),
               Text(
-                'Your bridge to the future',
+                'Together, we can build the future',
                 style: TextStyle(
                   fontSize: 14,
-                  color: Colors.grey.shade600,
+                  fontWeight: FontWeight.w500,
+                  color: subtextColor,
                   letterSpacing: 0.5,
                 ),
               ),
@@ -82,10 +83,15 @@ class _SplashScreenState extends State<SplashScreen> {
         color: brandColor.withOpacity(0.12),
         borderRadius: BorderRadius.circular(24),
       ),
-      child: Icon(
-        Icons.hub_outlined,
-        size: 52,
-        color: brandColor,
+     child: Image.asset(
+        'assets/logo.png',
+        errorBuilder: (context, error, stackTrace) {
+          return const Icon(
+            Icons.extension_rounded,
+            size: 56,
+            color: brandColor,
+          );
+        },
       ),
     );
   }
